@@ -1,0 +1,105 @@
+#trickyqiniu_container{
+    background-color: #fff;
+    color:#333;
+    padding: 10px 15px;
+}
+
+#trickyqiniu_container a:hover,
+#trickyqiniu_container a:focus{
+    text-decoration: none;
+}
+
+#trickyqiniu_title{
+    display: block;
+    line-height: 1.5;
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+
+#trickyqiniu_pickfiles{
+    cursor: pointer;
+}
+
+#trickyqiniu_title a{
+    color:#333;
+}
+
+#trickyqiniu_panel{
+    
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+#trickyqiniu_droparea{
+    color: #aaa;
+    background-color:#f5f5f5;
+    border:1px dashed #ccc;
+    height:60px;
+    line-height: 60px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#trickyqiniu_items{
+    margin: 10px 0;
+}
+.trickyqiniu_itemcontainer{
+    border-bottom: 1px solid #eee;
+    clear: both;
+    margin-top: -1px;
+    height: 100px;
+    background-color: #f5f5f5;
+}
+
+.trickyqiniu_itemcontainer img{
+    width:70px;
+    height: 70px;
+    background-color: #ccc;
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.trickyqiniu_itemcontainer ul{
+    list-style: none;
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 0;
+}
+
+.trickyqiniu_itemcontainer ul li{
+    margin-bottom: 3px;
+}
+
+.trickyqiniu_itemcontainer:last-child{
+    border-bottom:0;
+}
+
+.trickyqiniu_filename{
+    font-weight: bold;
+    margin:0;
+}
+
+.trickyqiniu_itemcontainer ul button{
+    border:0;
+    color: #555;
+    padding: 3px 10px 3px 0;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.trickyqiniu_link{
+    color: #fff;
+    background-color: #555;
+    padding: 3px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.trickyqiniu_link:focus,
+.trickyqiniu_link:hover{
+    color:#eee;
+    text-decoration: none;
+}

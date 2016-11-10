@@ -1,0 +1,31 @@
+
+
+<label id="trickyqiniu_title">
+    <a><i class="i-caret-down"></i>上传图片/文件</a>
+</label>
+<div id="trickyqiniu_panel">
+    <div id="trickyqiniu_droparea">
+        将文件拖放至这里上传,或者 <a id="trickyqiniu_pickfiles">点击这里上传文件</a>
+    </div>
+    
+    <div id="trickyqiniu_items">
+    </div>
+</div>
+
+<script>    
+    
+    //为面板收缩添加效果
+    $(function(){
+        $("#trickyqiniu_title").click(function(){
+            $("#trickyqiniu_panel").slideToggle("fast");
+            $icon = $("#trickyqiniu_title").children("a").children("i");
+            if($icon.attr("class") == "i-caret-right"){
+                $icon.attr("class","i-caret-down");
+            }else if($icon.attr("class") == "i-caret-down"){
+                $icon.attr("class","i-caret-right");
+            }
+        });
+    });
+
+</script>
+
