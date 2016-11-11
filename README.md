@@ -9,6 +9,7 @@ typecho 插件 - 上传文件到七牛
 
 # 依赖
 在这个插件里面依赖了部分js插件:
+
 1. jquery (这个插件中没有自行引入)
 2. moxie.js
 3. plupload.js
