@@ -95,16 +95,27 @@ class QiniuPostUploader_Plugin implements Typecho_Plugin_Interface
                         var sourceLink = domain +"/"+ res.key; //获取上传成功后的文件的Url
                         var mime = file.type;
                         filecount++;
+                        
+                        var markdownlink = "![]("+sourceLink+")";
+                        //如果是图片,则添加以下节点
                         if(mime.split("/")[0]=="image"){
                             var item = "<div class='trickyqiniu_itemcontainer'>"+
                                             "<img alt='' src='"+sourceLink+"'>" +
                                             "<ul>" +
                                                 "<li><p class='trickyqiniu_filename'>"+res.key+"</p></li>" +
                                                 "<li><a class='trickyqiniu_link' href='"+sourceLink+"' target='_blank'><i class='fa fa-external-link-square' aria-hidden='true'></i>&nbsp;&nbsp;"+sourceLink+"</a></li>" +
-                                                "<li><button type='button' data-clipboard-text=\""+sourceLink+"\" id=\"copybtn-"+filecount+"\" onclick='copylink(\""+sourceLink+"\",\"copybtn-"+filecount+"\")'><i class='fa fa-link' aria-hidden='true'></i>&nbsp;&nbsp;复制markdown</button></li>" +
+                                                "<li><button type='button' data-clipboard-text=\""+markdownlink+"\" id=\"copybtn-"+filecount+"\"><i class='fa fa-link' aria-hidden='true'></i>&nbsp;&nbsp;复制markdown</button></li>" +
                                             "</ul>" +
                                         "</div>";
+                            
                             $("#trickyqiniu_items").append(item);
+                            
+                            var client = new ZeroClipboard( document.getElementById("copybtn-"+filecount) );
+
+                            client.on( "ready", function( readyEvent ) {
+                              client.on( "aftercopy", function( event ) {
+                              });
+                            });
                         }
                         console.log(sourceLink);
                     },
@@ -150,13 +161,7 @@ class QiniuPostUploader_Plugin implements Typecho_Plugin_Interface
         //复制
         function copylink(link,eleid){
 //            ZeroClipboard.config( { swfPath: 'http://cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.swf' } );
-            var client = new ZeroClipboard( document.getElementById(eleid) );
-
-            client.on( "ready", function( readyEvent ) {
-
-              client.on( "aftercopy", function( event ) {
-              } );
-            } );
+            
         }
     </script>
 <?php
